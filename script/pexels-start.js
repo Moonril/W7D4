@@ -4,18 +4,12 @@ const mountainsImgURL = 'https://api.pexels.com/v1/search?query=mountains'
 const kittenImgURL = 'https://api.pexels.com/v1/search?query=kitten'
 const onionsImgURL = 'https://api.pexels.com/v1/search?query=onions'
 const imgsHtml = document.querySelectorAll('.card-img-top')
+const imgsID = document.querySelectorAll('.text-muted')
 
 
 
-// 1) Premere sul bottone "Load Images" caricherà il contenuto delle API nella pagina: //fetch get
-// 2) Premere sul bottone "Load Secondary Images" invece dovrà usare una diversa query:https://api.pexels.com/v1/search?query=kittens //fetch get
-// 3) Il tasto "Edit" andrà sostituito con un tasto "Hide".
-// 4) Quando si preme "Hide", l'intera card dovrebbe scomparire.
-// 5) Sostituisci il testo "9 mins" del template delle card con l'id dell'immagine corrispondente. //fetch get specifica?
-// 6) Nella sezione principale aggiungi un campo di ricerca. Usa il valore di questo campo per cercare nuove immagini rimpiazzando quelle esistenti.
-// 7) Cliccare l'immagine o il suo nome farà cambiare pagina verso una di dettaglio dell'immagine. Qui dovrai visualizzare immagine, nome artista e linkare la sua pagina personale. Dai la possibilità all'utente di tornare indietro
-// extras later
 
+//montagne
 
 const getMountainsImgs = function () {
 
@@ -49,7 +43,9 @@ const getMountainsImgs = function () {
 
         for (let i = 0; i < numImages; i++) {
             const photo = mountains.photos[i]
+            
             imgsHtml[i].src = photo.src.small
+            imgsID[i].innerText =  photo.id
         }
 
 
@@ -97,6 +93,8 @@ const getCipolleImgs = function () {
         for (let i = 0; i < numImages; i++) {
             const photo = mountains.photos[i]
             imgsHtml[i].src = photo.src.small
+            imgsID[i].innerText =  photo.id
+            
         }
 
 
@@ -110,11 +108,7 @@ const getCipolleImgs = function () {
 
 }
 
-
-
-
-
-
+// montagne
 
 const loadMountains = document.getElementById('load-button')
 
@@ -123,6 +117,8 @@ loadMountains.addEventListener('click', function(){
 
 })
 
+//cipolle
+
 const loadCipolle = document.getElementById('cipolla-button')
 
 loadCipolle.addEventListener('click', function(){
@@ -130,17 +126,34 @@ loadCipolle.addEventListener('click', function(){
 
 })
 
+// edit - hide buttons
 
 const editBtns = document.querySelectorAll('.edit')
 
 editBtns.forEach(btn => {
     btn.addEventListener('click', function (){
-        const card = btn.closest('.card')
-
-        if(btn.innerText === 'View') {
+        if(btn.innerText === 'Edit') {
             btn.innerText = 'Hide'
             console.log('funziono')
+        } else if (btn.innerText === 'Hide') {
+            const card = btn.closest('.card')
+            card.classList.add('d-none')
+
+            //create new card // trova la col più vicina
+            /* const col = btn.closest(.card) 
+            const newCard = card.innerHTML 
+            col.appendChild */
+
+
+
         }
         
     })
 })
+
+
+
+// 6) Nella sezione principale aggiungi un campo di ricerca. Usa il valore di questo campo per cercare nuove immagini rimpiazzando quelle esistenti.
+// 7) Cliccare l'immagine o il suo nome farà cambiare pagina verso una di dettaglio dell'immagine. Qui dovrai visualizzare immagine, nome artista e linkare la sua pagina personale. Dai la possibilità all'utente di tornare indietro
+// extras later
+

@@ -75,8 +75,8 @@
     <header>
       <div class="collapse bg-dark" id="navbarToggleExternalContent">
         <div class="container">
-          <div class="row flex-column">
-            <div class="col-sm-8 col-md-7 py-4 text-white">
+          <div class="flex-column row">
+            <div class="col-md-7 col-sm-8 text-white py-4">
               <h4>About</h4>
               <p class="text-gray">
                 Add some information about the album below, the author, or any
@@ -90,7 +90,7 @@
       </div>
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
+          <a href="#" class="d-flex navbar-brand align-items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -127,27 +127,27 @@
       </nav>
     </header>
     <main role="main">
-      <section class="jumbotron text-center">
+      <section class="text-center jumbotron">
         <div class="container">
           <h1 class="jumbotron-heading">Album API example</h1>
-          <p class="lead text-muted">
+          <p class="text-muted lead">
             This page will dynamically load pictures from the web, and display
             them in a cool way!
           </p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Load Images</a>
-            <a href="#" class="btn btn-secondary my-2">Load Secondary Images</a>
+            <a href="#" class="btn btn-primary my-2" id="load-button">Load Images</a>
+            <a href="#" class="btn btn-secondary my-2" id="cipolla-button">Load Cipolle</a>
           </p>
         </div>
       </section>
-      <div class="album py-5 bg-light">
+      <div class="bg-light album py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -157,18 +157,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -179,10 +179,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -192,18 +192,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -214,10 +214,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -227,18 +227,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -249,10 +249,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -262,18 +262,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -284,10 +284,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -297,18 +297,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -319,10 +319,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -332,18 +332,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -354,10 +354,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -367,18 +367,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -389,10 +389,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -402,18 +402,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -424,10 +424,10 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
+              <div class="card shadow-sm mb-4">
                 <img
                   src="https://picsum.photos/id/237/300/200"
-                  class="bd-placeholder-img card-img-top"
+                  class="card-img-top bd-placeholder-img"
                 />
                 <div class="card-body">
                   <h5 class="card-title">Lorem Ipsum</h5>
@@ -437,18 +437,18 @@
                     longer.
                   </p>
                   <div
-                    class="d-flex justify-content-between align-items-center"
+                    class="d-flex align-items-center justify-content-between"
                   >
                     <div class="btn-group">
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm"
                       >
                         View
                       </button>
                       <button
                         type="button"
-                        class="btn btn-sm btn-outline-secondary"
+                        class="btn btn-outline-secondary btn-sm edit"
                       >
                         Edit
                       </button>
@@ -474,5 +474,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="/script/pexels-start.js"></script>
   </body>
 </html>

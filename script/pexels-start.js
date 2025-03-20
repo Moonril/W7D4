@@ -138,14 +138,6 @@ editBtns.forEach(btn => {
         } else if (btn.innerText === 'Hide') {
             const card = btn.closest('.card')
             card.classList.add('d-none')
-
-            //create new card // trova la col più vicina
-            /* const col = btn.closest(.card) 
-            const newCard = card.innerHTML 
-            col.appendChild */
-
-
-
         }
         
     })
@@ -154,6 +146,70 @@ editBtns.forEach(btn => {
 
 
 // 6) Nella sezione principale aggiungi un campo di ricerca. Usa il valore di questo campo per cercare nuove immagini rimpiazzando quelle esistenti.
-// 7) Cliccare l'immagine o il suo nome farà cambiare pagina verso una di dettaglio dell'immagine. Qui dovrai visualizzare immagine, nome artista e linkare la sua pagina personale. Dai la possibilità all'utente di tornare indietro
-// extras later
 
+
+
+
+
+const customInput = document.getElementById('custom-value')
+const customButton = document.getElementById('custom-button')
+
+
+
+const loadImgs = function (query) {
+
+    fetch('https://api.pexels.com/v1/search?query=' + query, {
+        headers: {
+            Authorization: 'PA3kOW0Sflfbq1yPCWPFkA7G25eRlKqJMLlfBbwmLoUxVl73IeV6p4X0'
+        }
+    })
+    .then((response) => {
+        if(response.ok){
+            return response.json()
+        } else {
+            throw new Error('errore prima parte, not ok')
+        }
+    })
+    .then((mountains) => {
+        console.log('mountains', mountains)
+        // è un oggetto contentente un array di 15 oggetti.
+        // mountains.photos[i].url oppure .src.small .portrait .medium
+        // ora bisogna assegnare ogni singola foto alle card che esistono già
+
+        // document.getElementById("imageid").src="../template/save.png";
+
+
+        if (!mountains.photos || mountains.photos.length === 0) {
+            throw new Error('Nessuna foto disponibile');
+        }
+
+
+        const numImages = Math.min(imgsHtml.length, mountains.photos.length)
+
+        for (let i = 0; i < numImages; i++) {
+            const photo = mountains.photos[i]
+            
+            imgsHtml[i].src = photo.src.small
+            imgsID[i].innerText =  photo.id
+        }
+
+
+    })
+    .catch((err) => {
+        console.log('si è verificato un errore', err)
+    })
+
+
+
+
+}
+
+
+customButton.addEventListener('click', function() {
+    loadImgs(customInput.value)
+})
+// 7) Cliccare l'immagine o il suo nome farà cambiare pagina verso una di dettaglio dell'immagine. Qui dovrai visualizzare immagine, nome artista e linkare la sua pagina personale. Dai la possibilità all'utente di tornare indietro come esercizio fatto giovedì in classe
+
+// quando clicchi view, ti apre un modale con l'immagine più grande
+// ogni img ha un avg_color, metterla come sfondo al modale
+// repo stefano https://github.com/irvelervel/FS0125-U2-W3-D4-HW
